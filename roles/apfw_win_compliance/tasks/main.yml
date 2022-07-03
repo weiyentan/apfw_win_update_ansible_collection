@@ -1,0 +1,6 @@
+---
+  - pause: 
+      minutes: "{{ apfw_minwait }}"
+  
+  - name: Patching Status
+    win_apfwcompliance:
