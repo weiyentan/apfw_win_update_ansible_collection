@@ -60,12 +60,14 @@ class ActionModule(ActionBase):
               module_return = self._execute_module(module_name='win_apfwcompliance', module_args=module_args, task_vars=task_vars, tmp=tmp)
             except:
                if isinstance(e, _ReturnResultException):
-                   msg = " The host {{ inventory_host}} results had an error . . . Continuing"
+                   msg = " The host {{ inventory_host }} results had an error . . . Continuing"
                    display.display(msg)
+                   pass
               
                if isinstance(e, AnsibleConnectionFailure ):
-                   msg = " The host {{ inventory_host was not able to be contactable"
+                   msg = " The host {{ inventory_host }} was not able to be contactable"
                    display.display(msg)
+                   pass
 
             if not module_return.get('failed'):
               for key, value in module_return['apfw_patchingstatus'].items():
