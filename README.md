@@ -1,10 +1,20 @@
 # apfw_win_update
 
 ## Overview
+APFW stands for Automated Patching Framework Windows.
+
 
 The **apfw_win_update** Ansible collection is designed to speed up and simplify the process of managing Windows updates using the `PSWindowsUpdate` module and PowerShell automation. This collection provides a structured way to handle Windows updates and compliance through Ansible, making it easier for system administrators to manage updates across multiple Windows systems.
 
+
+
 The install_winupdates role is designed to install Windows updates using the `PSWindowsUpdate` module.  The install_winupdates role is designed to install Windows updates using the `PSWindowsUpdate` module. It requires a Windows Update Server / Update Server. 
+
+## How it Differs from Traditional `win_update` Task
+
+The `apfw_win_update` collection differs from the native Ansible `win_update` module in its approach to managing updates. While the native `win_update` module directly installs updates, `apfw_install_winupdates` uses Ansible to configure the machine and deploy patching scripts, create a scheduled task to run these scripts.. These scripts handle the logic of installing updates and rebooting, providing more control and flexibility.
+
+The `apfw_wait` role, which monitors the update process to ensure updates are applied successfully and pauses playbook execution if the update process is not completed. This collection is more scalable and can be used to manage multiple systems simultaneously. 
 
 ## Installation and Usage
 
@@ -36,6 +46,7 @@ This collection has been tested against the following Ansible versions: >=2.15. 
 
 ## Changelog
 
+- **2025-02-22**: Renamed `install_winupdates` role to `apfw_install_winupdates` to align with the naming convention of other roles in the collection.
 See [CHANGELOG.rst](CHANGELOG.rst) for the release history and changes made to this collection.
 
 ## Collection Documentation
