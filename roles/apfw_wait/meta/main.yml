@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: Your Name
+  description: Wait controller for APFW operations
+  company: Your Company
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: Windows
+      versions:
+        - 2019
+        - 2022
+  galaxy_tags:
+    - wait
+    - apfw
+    - utility
+
+dependencies: []
