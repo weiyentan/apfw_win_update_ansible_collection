@@ -1,0 +1,4 @@
+---
+apfw_wait_timeout: 300
+apfw_wait_retry_delay: 5
+apfw_wait_message: "Waiting for APFW operation to complete"

@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  roles:
+    - apfw_wait
+  vars:
+    apfw_wait_timeout: 30
+    apfw_wait_retry_delay: 2
+    apfw_wait_message: "Testing APFW wait operation"

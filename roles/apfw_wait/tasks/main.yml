@@ -1,0 +1,14 @@
+---
+- name: pause for 10 seconds for patch status file to be generated
+  pause:
+    seconds: 10
+
+- name: Wait for Patching to complete
+  apfw_wait:
+    connection_retries: 10
+    connection_delay: 300  # Delay 300 seconds (5 minutes) between connection retry attempts
+    max_retries: "{{ apfw_wait_max_retries | default('100') }}"
+    retry_delay: "{{ apfw_wait_retry_delay | default('600') }}"  # Delay 600 seconds (10 minutes) between general task retries
+    delay: "{{apfw_wait_delay | default('10')}}"  # Initial delay of 10 seconds before starting the wait period
+
+
